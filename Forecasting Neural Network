@@ -1,0 +1,37 @@
+clear all;
+clc
+filename='C:\Users\Aniket\Desktop\Andheri_Beer_Litres_ANN.xlsx';
+x=xlsread(filename);
+P=x(:,1:2)';   
+T=x(:,3)';
+
+%Creating feedforward neural network
+net = feedforwardnet(5,'trainlm');
+RandStream.setGlobalStream(RandStream('mt19937ar','seed',1)); %for constant results
+net.trainParam.epochs = 100;
+
+%keeping activation function as log-sigmoid
+net.layers{1}.transferFcn = 'logsig';
+net.divideFcn = 'dividerand';
+
+net.divideParam.trainRatio = 0.70;
+net.divideParam.testRatio = 0.15;
+net.divideParam.valRatio = 0.15;     
+net = train(net,P,T);
+y = net(P);
+
+%error calculation
+error=abs(T-y);
+er=mse(T,y);
+rms=sqrt(er)
+
+%plotting the result
+i=linspace(1,839,839);
+plot(i,T,'color','r');hold on;
+plot(i,y,'color','b');
+xlabel('no. of day');
+ylabel('Beer Consumption');
+legend('Actual Generation','Model Generation');
+%plot(T,y);
+max_error=max(error)
+min_error=min(error)
