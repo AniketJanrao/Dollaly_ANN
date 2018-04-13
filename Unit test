@@ -1,0 +1,50 @@
+Features [x(t)] - date 
+Target [y(t)] - total_consumption
+
+Structure - 5 Hidden layer
+            5 Input layer
+            logsigmoid function (activation function)
+            backprop
+
+Efficiency - 68.8%
+
+-------------------------------------------------------------------------------------------------------------------------
+
+Features [x(t)] - day, date, month, year, degree 
+Target [y(t)] - total_consumption
+
+Structure - 10 Hidden layer
+            12 Input layer
+            sigmoid function (activation function)
+            baysian regularization
+
+Efficiency - 81.8%
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Features [x(t)] - day, month, year, degree
+Target [y(t)] - total_consumption
+
+Structure - 10 Hidden layer
+            10 Input layer
+            sigmoid function (activation function)
+            backprop
+
+Efficiency - 82%
+
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Features [x(t)] - day, date, month, year, degree 
+Target [y(t)] - total_consumption
+
+Structure - 10 Hidden layer
+            7 Input layer
+            sigmoid function (activation function)
+            backprop
+
+Efficiency - 83%
+
+
+---------------------------------------------------------------------------------------------------------------------------------
