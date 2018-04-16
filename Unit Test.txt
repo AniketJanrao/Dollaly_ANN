@@ -1,0 +1,9 @@
+date, total_consumption(5 HN,logsig, backprop)- 68.8%
+
+
+day, date, month, year, degree, total-consumption(10-12 HN, 10, sig, baysian regularization)- 81.8%
+
+
+day, month, year, degree, total-consumption(10 HN, 10, sig, backprop)-82%
+
+all, 10 Hn, 7, backprop- 83%
